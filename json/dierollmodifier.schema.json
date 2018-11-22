@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "dierollmodifier.schema.json",
+    "title": "DieRollModifier",
+    "description": "A die roll modifier.",
+    "type": "object",
+    "properties":{
+        "modifierType": {
+            "type": "string",
+            "description": "The type of modification to apply. The valid values are +, -, x, X or /",
+            "enum": [ "+", "-", "x", "X", "/" ]
+        },
+        "modifierValue": {
+            "type": "integer",
+            "description": "The value to use. Must be 1 or geater.",
+            "minimum": 1
+        }
+    }
+}

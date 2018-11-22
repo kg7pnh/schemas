@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dieroll.schema.json",
+  "title": "DieRoll",
+  "description": "A die roll.",
+  "type": "object",
+  "properties": {
+    "dieSize": {
+      "description": "The size of the die to be rolled. Valid valudes are 4, 6, 8, 10, 12, 20 and 100.",
+      "type": "integer",
+      "enum": [4, 6, 8, 10, 12, 20, 100]
+    },
+    "dieCount": {
+      "description": "The number of dice to roll. Minimum is 1.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "perModifier": {
+      "description": "The modifer to apply to each individual die roll when more than 1 die is used. As an example, if the die roll is written as 3(D6+1), this modifier type would be used.",
+      "$ref": "file:schemas/dieroll.schema.json"
+    },
+    "rollModifier": {
+      "description": "The modifier to apply to the roll of all dice. As an example, if the die roll is written as 3D6+1, this modifier type would be used.",
+      "$ref": "file:schemas/dieroll.schema.json"
+    },
+    "postModifier": {
+      "description": "The modifier to apply after all dice have been rolled and other modifiers have been applied. As an example, if the die roll is written as 3D6+10x1000, this modifier type would be used.",
+      "$ref": "file:schemas/dieroll.schema.json"
+    }
+  },
+  "required": [
+    "dieSize",
+    "dieCount"
+  ]
+}
