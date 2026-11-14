@@ -4,7 +4,7 @@
     "title": "DieRollModifier",
     "description": "A die roll modifier.",
     "type": "object",
-    "properties":{
+    "properties": {
         "modifierType": {
             "type": "string",
             "description": "The type of modification to apply. The valid values are +, -, x, X or /",
@@ -12,8 +12,12 @@
         },
         "modifierValue": {
             "type": "integer",
-            "description": "The value to use. Must be 1 or geater.",
+            "description": "The value to use. Must be 1 or greater.",
             "minimum": 1
         }
-    }
+    },
+    "required": [
+        "modifierType",
+        "modifierValue"
+    ]
 }
